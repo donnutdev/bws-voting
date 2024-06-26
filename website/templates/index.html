@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <form class="form" id="nameForm" method="POST">
+            <div class="input-group">
+                <label for="name">Full Name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter your Full Name here" required />
+            </div>
+
+            <label for="selectGrade">Choose your grade:</label>
+            <select id="selectGrade" name="grade_select" style="">
+                <option value='Student'>Student</option>
+                <option value='Teacher'>Teacher</option>
+            </select>
+            <button type='submit' class="btn block">
+                Continue <i class="fas fa-arrow-right-long"></i>
+            </button>
+        </form>
+    </div>
+{% endblock %}

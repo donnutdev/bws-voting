@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% block head %}
+      {% endblock %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>BWS Voting</title>
+  </head>
+  <body bgcolor="#282b30">
+    <nav>
+      <div class="nav-content">
+        <div class="hero-img">
+          <img src="https://bostonworldschool.com/wp-content/uploads/2020/02/cropped-Boston-Wold-School-1.jpg" alt="BWS Logo"/>
+        </div>
+
+        <div class="hero-text">
+          <h1>
+            Student Council Voting System 2024
+          </h1>
+        </div>
+            {% if current_user.name == "adminacc" %}
+                <a href="/admin/head-boy">Admin Panel</a>
+            {% endif %}
+      </div>
+    </nav>
+
+    <section>
+    {% block content %}
+
+    {% endblock %}
+    </section>
+    <div class="footer">
+      <h2 style="color: white; margin-top: auto;">Made By Hanif Patel and Rishab Sharma in 2022</h2>
+    </div>
+  </body>
+  <script src={{ url_for('static', filename="js/main.js") }}></script>
+</html>
